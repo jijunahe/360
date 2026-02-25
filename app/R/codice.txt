@@ -1,0 +1,14 @@
+library(tidyverse)
+library(nycflights13)
+
+flights <- as_data_frame(flights)
+
+#functiones utiles
+flights %>%
+  slice(1)
+
+flights %>%
+  slice(1:5)
+
+nrow(flights)
+summary(flights)

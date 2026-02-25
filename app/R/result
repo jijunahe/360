@@ -1,0 +1,61 @@
+> # load packages
+> library(tidyverse)
+-- Attaching packages --------------------------------------- tidyverse 1.2.1 --
+<U+221A> ggplot2 2.2.1     <U+221A> purrr   0.2.4
+<U+221A> tibble  1.4.2     <U+221A> dplyr   0.7.4
+<U+221A> tidyr   0.8.0     <U+221A> stringr 1.2.0
+<U+221A> readr   1.1.1     <U+221A> forcats 0.2.0
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+> 
+> #load data
+> train <- read_csv("/var/www/html/bi/R/entrenamiento.csv")
+Parsed with column specification:
+cols(
+  edad = col_integer(),
+  rangoedad = col_integer(),
+  Genero = col_integer(),
+  Diabetes = col_integer(),
+  Hiperten1on = col_integer(),
+  Perimetro = col_integer(),
+  Peso = col_integer(),
+  Talla = col_integer(),
+  IMC = col_integer()
+)
+> train_data_fram <- read.csv("/var/www/html/bi/R/entrenamiento.csv", stringsAsFactors = FALSE)
+> #train
+> #names(train)
+> #cor(train)
+> modelo <- lm(Perimetro ~ IMC + Peso + Talla, data=train)
+> summary(modelo)
+
+Call:
+lm(formula = Perimetro ~ IMC + Peso + Talla, data = train)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-53.378  -4.885   0.670   5.448  65.382 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 111.48846    9.31264  11.972  < 2e-16 ***
+IMC          -0.15173    0.16203  -0.936    0.349    
+Peso          0.70211    0.06695  10.487  < 2e-16 ***
+Talla        -0.39968    0.06001  -6.660 2.97e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.962 on 6124 degrees of freedom
+Multiple R-squared:  0.3976,	Adjusted R-squared:  0.3973 
+F-statistic:  1347 on 3 and 6124 DF,  p-value: < 2.2e-16
+
+> 
+> nuevo.IMC <- data.frame(IMC = seq(22))
+> nuevo.Peso <- data.frame(Peso = seq(50))
+> nuevo.Talla <- data.frame(Talla = seq(150))
+> 
+> predict(modelo,data.frame(IMC=16,Peso=34,Talla=147))
+       1 
+74.18004 
+> 

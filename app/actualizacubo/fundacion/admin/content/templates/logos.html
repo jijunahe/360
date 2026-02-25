@@ -1,0 +1,137 @@
+ <script type="text/javascript" src="js/flogos.js"></script>
+ <div class="contentForm" style="width:inherit;">
+{#if $obj->modo=="editar" || $obj->modo=="agregar"#}
+         <input type="hidden" name="itemId" id="itemId" value="{#$obj->mDetalle.id#}" />
+        <input type="hidden" name="type" id="type" value="{#$obj->modo#}" />
+         <div id="LOGOS" class="left">
+		        <div class="left Items" id="item_1">
+					<div class="left content_field">
+						<label for="fecha" class="font14 fontgris">Nombre Logo</label><br>
+						<input type="text" class="rounded3 nombre" id="nombre_1" name="nombre_1" value="{#$obj->mDetalle.nombre#}"/>
+					</div>
+					<div class="left content_field">
+						<label for="dia" class="font14 fontgris">Nivel</label><br>
+						<select name="nivel_1" id="nivel_1" class="nivel">
+						{#section name=k loop=$obj->niveles#}
+						   {#if $obj->mDetalle.idNivel>0#}
+							<option value="{#$obj->niveles[k]->id#}" {#if $obj->mDetalle.idNivel==$obj->niveles[k]->id #}selected{#/if#} > {#$obj->niveles[k]->nombre#}</option>
+						   {#else#}
+							<option value="{#$obj->niveles[k]->id#}" {#if $obj->niveles[k]->id==1 #}selected{#/if#} > {#$obj->niveles[k]->nombre#}</option>
+							{#/if#}
+						{#/section#}
+						</select>
+					</div> 
+					<div class="left content_field" style="width: 500px;">
+						<form action="upload.php" method="POST" target="puente" enctype='multipart/form-data' style="float: left;" >
+							<label for="dia" class="font14 fontgris">Imagen</label><br>
+							<input type="file" name="imglogo_1" class="logo" id="imglogo_1"/>
+							<input type="hidden" class="count" name="count" value="1"/>
+ 						</form>
+						<div class="images" style="margin-top: -11px;float: left;margin-left: 52px;">
+						{#if $obj->mDetalle.archivo!=""#}
+						<img src="../images/logos/{#$obj->mDetalle.archivo#}" style="width: 118;"/>
+						{#/if#}
+						</div>
+						{#if $obj->mDetalle.archivo!=""#}
+						<input type="hidden" class="itemID" name="itemID" value="{#$obj->mDetalle.id#}"/>
+						<input type="hidden" class="update" name="update" value="1"/>
+						{#else#}
+						<input type="hidden" class="update" name="update" value="0"/>
+						{#/if#}
+					</div> 
+					
+				</div>
+ 		</div>
+		
+		<div class="btnAction">
+            	<input class="clearfix submit_frm left" style="margin-right:5px;" frmid="frmtplregistro" id="guardar" type="button" value="Guardar" >
+            	<input class="clearfix submit_frm left" frmid="frmtplregistro" type="button" value="Cancelar" onclick="makeRedirect('{#$obj->mLinkVolver#}');">
+        </div>
+		
+		<div id="AgregarItem" style="cursor:pointer;float: left;">Agregar Item</div>
+
+        <div class="left" id="errorField" style="color:#F00; margin:0 0 0 30px; display:none;"><div id="messageError"></div></div>
+ 	<iframe   id="puente" name="puente" style="display:block"></iframe>
+    {#elseif $obj->modo=="ver"#}
+    	<div class="left">
+            <div class="left content_field">
+                <label for="fecha" class="font14 fontgris">Nombre</label><br>
+                {#$obj->mDetalle.nombre#}
+            </div>
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Usuario</label><br>
+                {#$obj->mDetalle.login#}
+            </div> 
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Email</label><br>
+                {#$obj->mDetalle.email#}
+            </div>
+            <div class="left content_field">
+                <label for="perfil" class="font14 fontgris">Perfil</label><br>
+                {#$obj->mDetalle.perfilName#}
+            </div>
+            <div class="left btnAction">            	
+            	<input class="clearfix submit_frm left" frmid="frmtplregistro" type="button" value="Cancelar" onclick="makeRedirect('{#$obj->mLinkVolver#}');">
+            </div>
+        </div>
+    {#elseif $obj->modo=="listado"#}
+	<div class="listado">
+    	<div class="left pagelist" style="height:auto;">
+        	<div class="pageNavigation">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="450">
+                    <tr>
+                        <td width="50">{#$obj->mPagination.mLinkPrimero#}</td>
+                        <td width="60">{#$obj->mPagination.mLinkAtras#}</td>
+                        <td align="center">{#$obj->mPagination.pagination#}</td>
+                        <td width="50">{#$obj->mPagination.mLinkSiguiente#}</td>
+                        <td width="50">{#$obj->mPagination.mLinkUltimo#}</td>
+                    </tr>
+                </table>
+            </div>        
+            <div class="search">
+            	<form class="" action="" method="" onsubmit="makeRedirect('{#$obj->mLinkVolver#}&searchText='+jQuery('#inputSearch').val()); return false;">
+                	<input class="left rounded3" type="text" name="inputSearch" id="inputSearch" value="{#$obj->mTextSearch#}" />
+                    <a href="javascript:void(0);" onclick="makeRedirect('{#$obj->mLinkVolver#}&searchText='+jQuery('#inputSearch').val()); return false;" class="left"><img src="images/iconSearch.png" border="0" align="absbottom" /></a>
+                </form>
+            </div>
+            <div class="btnAdd">
+            	<a href="{#$obj->mLinkAdd#}">
+                	<img src="images/iconAddUser.png" border="0" align="absmiddle" class="left" />
+                    <span style="float:left; margin:7px 0 0 0;">Agregar Nuevo</span>
+                </a>
+            </div>
+        </div>
+        <div class="left itemlist">
+            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+                <tr>
+                    <th align="left" width="250">Nombre Log</th>
+                    <th align="left">Nivel</th>
+                    <th align="left">Archivo</th>
+                    <th align="left" width="150">&nbsp;</th>
+                </tr>
+                {#section name=k loop=$obj->mLista#}
+				
+                <tr>
+                    <td>{#$obj->mLista[k]->nombre#}</td>
+                    <td>{#$obj->mLista[k]->idNivel#}</td>
+                    <td><img src="../images/logos/{#$obj->mLista[k]->archivo#}" style="width: 118;"/> </td>
+                    <td align="center" class="btonActionItem" width="170">
+                    	
+                        <a href="{#$obj->mLista[k]->linkEditar#}">
+                        	<img src="images/iconEditUser.png" border="0" align="middle" class="left" />
+                            <span style="float:left; margin:7px 0 0 5px;">Editar</span>
+                        </a>
+                        <a href="javascript:void(0);" onclick="confirmAction('¿Esta seguro de eliminar el registro?, tenga en cuenta que toda actividad asociada al mismo, serán eliminados','{#$obj->mLista[k]->linkEliminar#}');">
+                        	<img src="images/iconDeleteUser.png" border="0" align="absmiddle" class="left" />
+                        	<span style="float:left; margin:7px 0 0 5px;">Eliminar</span>
+                        </a>                        
+
+                       
+                    </td>
+                </tr>
+                {#/section#}                
+            </table>
+		</div>
+    </div>
+    {#/if#}
+</div>

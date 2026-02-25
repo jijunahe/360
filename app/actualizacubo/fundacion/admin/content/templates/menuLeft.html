@@ -1,0 +1,8 @@
+<ul>
+	
+   {#section name=k loop=$obj->menuLinks#}
+    <li><a href="{#$obj->menuLinks[k].link#}">{#$obj->menuLinks[k].titulo#}	</a></li>
+   {#/section#}
+	
+    <li><a href="javascript:void(0);" onclick="confirmAction('¿Realmente desea cerrar la aplicasion?', '{#$obj->mLinkLogout#}');">Salir</a></li>
+</ul>

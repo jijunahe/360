@@ -1,0 +1,116 @@
+<?php
+
+/**
+ * This is the model class for table "{{baremos_dominios}}".
+ *
+ * The followings are the available columns in table '{{baremos_dominios}}':
+ * @property integer $id
+ * @property integer $sid
+ * @property integer $dominio_id
+ * @property string $srrd
+ * @property string $rb
+ * @property string $rm
+ * @property string $ra
+ * @property string $rma
+ * @property string $fecha
+ */
+class BaremosDominios extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{baremos_dominios}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('sid, dominio_id', 'numerical', 'integerOnly'=>true),
+			array('srrd, rb, rm, ra, rma', 'length', 'max'=>20),
+			array('fecha', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id, sid, dominio_id, srrd, rb, rm, ra, rma, fecha', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'ID',
+			'sid' => 'Sid',
+			'dominio_id' => 'Dominio',
+			'srrd' => 'Srrd',
+			'rb' => 'Rb',
+			'rm' => 'Rm',
+			'ra' => 'Ra',
+			'rma' => 'Rma',
+			'fecha' => 'Fecha',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('sid',$this->sid);
+		$criteria->compare('dominio_id',$this->dominio_id);
+		$criteria->compare('srrd',$this->srrd,true);
+		$criteria->compare('rb',$this->rb,true);
+		$criteria->compare('rm',$this->rm,true);
+		$criteria->compare('ra',$this->ra,true);
+		$criteria->compare('rma',$this->rma,true);
+		$criteria->compare('fecha',$this->fecha,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return BaremosDominios the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+}

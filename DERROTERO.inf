@@ -1,0 +1,31 @@
+PHP 5.3.10-1ubuntu3.26 with Suhosin-Patch (cli) (built: Feb 13 2017 20:37:53)
+Copyright (c) 1997-2012 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2012 Zend Technologies
+
+FRAMEWORWK  Lime survey bajo Yii framework 1
+
+Es importante tener en cuenta que para este desarrollo no se puede instalar en versiones superiores a  PHP 5.3.10, 
+ya que varios modulos no funcionarían
+
+BD
+mysql  Ver 14.14 Distrib 5.5.38, for debian-linux-gnu (x86_64) using readline 6.2
+MySam
+
+Dado que para la versión de PHP no es posible instalar Composer, se creo un servicio para generar los PDF 
+que apunta a (reporte360) en otro servidor con versiones que permitan la instalacion de composer.
+
+Por favor dar permisos de escritura en 60
+
+60/tmp/*
+60/upload/*
+
+La carpeta reporte360 es un servicio exclusivo para la generación de reportes en PDF. Como habia mensionado antes, este script
+no funciona bajo PHP 5.3.10 ya que utiliza composer. Este debe ser instalado bajo un contenedor con PHP superior y que permita la
+instalación de composer.
+
+
+Por favor dar permisos de escritura en reporte360
+
+reporte360/*
+
+

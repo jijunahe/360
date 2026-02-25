@@ -1,0 +1,11 @@
+{#if $obj->mErrorMessage!=""#}
+	<script>
+    	alert('{#$obj->mErrorMessage#}');
+    </script>
+{#/if#}
+<div class="logo"><a href="index.php"><img src="../img/logo.png" border="0" /></a></div>
+<div class="menuTopRight">
+	{#if $obj->showManagerIp#}
+	<div class="right"><a id="managerIP" href="javascript:void(0);"><img src="images/IP.png" border="0" width="35" /></a></div>
+    {#/if#}
+</div>

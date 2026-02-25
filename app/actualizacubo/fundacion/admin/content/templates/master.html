@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>{#$title#}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="css/colorbox.css">
+<link type="text/css" rel="stylesheet" href="css/jquery-ui/jquery-ui-1.8.23.custom.css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/funciones.js"></script>
+
+<!--[if lt IE 10]>
+<script type="text/javascript" src="js/PIE.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/selectivizr.js"></script>
+<![endif]-->
+	
+</head>
+
+<body>  
+  <!--preload de la pagina-->
+  <div id="loader" class="border5">
+    <div class="img_preload" align="center"><img src="images/loading.gif" alt="" width="50" height="50"></div>
+  </div> 
+  
+  {# if $fileView=='login' #}
+  	
+	<div id="contenedor">
+	{#$fileInclude#}
+	</div>
+	
+  {# else #}  
+  <!--preload de la pagina -->
+  <div class="header">
+  	{#$header#}  	
+  </div>
+  <div class="contenido">
+  	<!--Menu Izquierda-->
+    <div class="menuLeft left">
+  		{#$menuLeft#}
+    </div>
+    <div class="sombra1"></div>
+    <!--Contenido-->
+    <div class="seccion left"> 
+    	<div class="left titleSeccion" style="background:#DDDDDD; margin:0 0 5px 0;">
+            <h3 style="margin:0; padding:5px;">Seccion: <span style="font-weight:normal;">{#$seccion#}</span></h3>
+        </div>   	
+		{#$fileInclude#}
+    </div>
+  </div>
+  <div class="footer"></div>
+  {# /if #}   
+  
+</body>
+</html>

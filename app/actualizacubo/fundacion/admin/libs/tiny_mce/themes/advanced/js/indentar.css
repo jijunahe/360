@@ -1,0 +1,19 @@
+#progress {
+	border: 1px solid black;
+    margin-left: 200px;
+    overflow: hidden;
+    position: absolute;
+    width: 25em;
+}
+
+#progress #bar {
+	visibility: hidden;
+	float: left;
+	width: 1%;
+	height: 1em;
+	height: 1em;
+	padding: 0px 0px 5px 0px;
+	background-color: #405BA6;
+	color: white;
+	text-align: right;
+}

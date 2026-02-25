@@ -1,0 +1,379 @@
+/*** Minimized/Maximized Toolbar ***/
+
+.cke_minimized .cke_break,
+.cke_minimized .buttonSpan-1,
+.cke_minimized .buttonSpan-2,
+.cke_minimized .buttonSpan-3,
+.cke_minimized .buttonSpan-4,
+.cke_minimized .buttonSpan-6,
+.cke_minimized .buttonSpan-7,
+.cke_minimized .buttonSpan-8,
+.cke_minimized .buttonSpan-9,
+.cke_minimized .buttonSpan-10,
+.cke_minimized .buttonSpan-12,
+.cke_minimized .buttonSpan-13,
+.cke_minimized .buttonSpan-14 {
+		display: none;
+}
+
+.cke_maximized .buttonSpan-16,
+.cke_maximized .buttonSpan-17,
+.cke_maximized .buttonSpan-18,
+.cke_maximized .buttonSpan-19,
+.cke_maximized .buttonSpan-20,
+.cke_maximized .buttonSpan-21 {
+		display: none;
+}
+
+/* Some changes to codemirror used on template editor */
+.codemirror-ui-button-frame input,.codemirror-ui-button-frame label{
+	font-size: 0.7em !important;
+}
+
+.codemirror-ui-find-bar{
+	margin-top: 0.2em !important;
+}
+
+/* HTML editor */
+div.htmleditor {
+    display: inline-block;
+}
+
+.imagelink {
+    float:left;
+}
+
+.imagelink img {
+    margin-top: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.popuptip {
+    position:absolute;left:-99999em;
+}
+.menubar a{display:inline-block;}
+
+
+.menubar select {
+    margin-bottom: 0px;
+   
+}
+.qtip-questiontype {
+    z-index: 100000;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-width: 468px;
+    width: 468px;
+}
+
+#surveydetails td:first-child,
+#groupdetails td:first-child,
+#questiondetails td:first-child {
+    width:25%;
+    font-weight:bold;
+    text-align:right;
+    vertical-align:top;
+}
+
+#surveydetails td+td,
+#groupdetails td+td,
+#questiondetails td+td {
+    text-align:left;
+}
+
+
+/* Some color for information block */
+/* Best is to replace in template   */
+.error{color:#B94A48}
+.success{color:#468847}
+.warning{color:#C09853}
+/******************************************************************************/
+/* Bootstrap overrides.                                                       */
+/******************************************************************************/
+label {display: inline-block;}/* override but leave admin template to override again */
+/* Fixes li not expanding to size of containing table. (Survey settings add language interface) */
+form li {
+    overflow: hidden;
+}
+/* Fix padding on table cell */
+table td, table th {
+    padding: 1px;
+}
+/* Fix select width, bootstrap set it for mobile */
+select {
+    width: auto;
+}
+/* Fix select and input width, taken from getskeleton and other */
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]
+{
+    max-width:99%;
+}
+/* Specific select ?*/
+.select{
+    margin-left: 10px;
+}
+
+.select * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Think this can be in template/adminstyle.css */
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    min-width: 6em;
+    width:auto;
+    margin-bottom: 0px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+textarea,select[size]{
+    height: auto;
+}
+.ui-jqgrid{clear:both}
+.ui-jqgrid-btable.load{opacity:0.5}
+.ui-jqgrid select,.ui-jqgrid textarea,.ui-jqgrid input[type="text"]{
+    padding: 2px;
+}
+.gridcontrol.disabled{visibility:hidden}
+label, legend {
+    width:auto;
+    min-height: 26px;
+    margin-bottom: 0px;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Make line spacing more compact for advanced question settings */
+li label {
+    line-height: 1em;
+    margin-top: .4em;
+}
+
+/* Fix input height for jqgrid (survey overview) */
+div.ui-jqgrid-hbox input, div.ui-jqgrid-hbox input{
+    height: 18px;
+}
+/* fix jqgrid th height */
+.ui-jqgrid .ui-jqgrid-htable th {
+    height: auto;
+    padding: 0 2px;
+}
+/* Fix height of browsettable */
+.browsetable th .qcode {
+    display: block;
+    height: auto;
+}
+.browsetable th .questiontext {
+    display: block;
+    height: 3em;
+    overflow: hidden;
+}
+.ui-tooltip.tooltip-text{min-width:15em}
+.templateeditor {
+    float:left;
+    width:70%; 
+    padding:1em;
+}
+
+/* Make jqgrid pagers fit in IE */
+.ui-jqgrid .ui-jqgrid-toppager,
+.ui-jqgrid .ui-jqgrid-pager {
+    height: auto !important;
+}
+
+/* some li in form have clear */
+.ui-tabs .ui-tabs-nav li{
+clear: none !important;
+}
+
+/* Make pager not so high */
+.ui-jqgrid input,
+.ui-jqgrid select {
+    height: auto;
+    min-height: 1.4em;
+    line-height: 1.4em;
+    display: inline-block;
+    min-width: 0;
+    width: auto;
+    overflow: hidden;
+}
+
+legend { line-height: normal; }
+
+/* export tooltips */
+.tooltip-export {
+    display: inline;
+}
+.tooltip-export .exporttip {
+    display: none;
+}
+.popover-content p .exporttip { text-align: left;}
+.exporttip li { overflow: visible;}
+li input+label { display: inline;}
+#resultexport ol, #resultexport ul { margin: 0 0 10px 10px;}
+
+
+
+
+/*EVALGENSER*/
+#content{/*position:relative;    margin-top: 40px;*/}
+.divContentBlue {
+padding: 5px;
+ background-color: #F2F2F2;
+color: #1F497D;
+}
+.divContentWhite {
+background-color: #FFFFFF;
+ 
+padding: 5px;
+}
+
+.formularioEstructura{
+margin:0px;
+ padding:0px;
+
+}
+
+.tbrepor1 td {
+font-size: 13px;
+color: #626262;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+ 
+.grupoTitulo {
+text-align: center;
+font-weight: bold;
+border: 1px solid #AABBCC;
+background-color: #F2F2F2;
+padding: 5px;
+}
+
+.divAsk {
+padding: 5px;
+border-bottom: solid 1px #AABBCC;
+border-left: solid 1px #AABBCC;
+border-right: solid 1px #AABBCC;
+}
+ 
+.divExito{
+	text-align:center;
+	padding:10px;
+	background-color:#EBFFD7;
+	border:1px solid #6AD500;
+}
+
+.divGood{
+	background-color: #E2FFDF;
+    border: 1px solid #085500;
+    padding: 5px;
+    text-align: center;
+}
+.divAlert{
+	background-color: #FFFFBB;
+    border: 1px solid #B18904;
+    padding: 5px;
+    text-align: center;
+}
+.divError{
+	background-color: #FFE6E6;
+    border: 1px solid #6B0000;
+    padding: 5px;
+    text-align: center;
+}
+
+
+
+
+
+.contentmenu { /* es el bloque contenedor del menú */
+   height: 40px;
+   	background-color:#162A83;
+	width: 100%;
+ }
+
+#menu { /* es el bloque contenedor del menú */
+  background: #EDEDFB;
+ /* border: 1px solid #ABC;*/
+  height: 32px;
+ color:#45415f;
+ position: absolute;
+}
+#menu  ul { /* las listas */
+  display: block;
+  line-height: 1em;
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 90;
+
+}
+#menu  ul li { /* los items de las listas */
+  float: left;
+  font-size: 12px;
+  line-height: 1, 5em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#menu ul li a { /* los enlaces de las listas */
+  background: transparent;
+  color: #45415f;
+  display: block;
+  font-weight: bold;
+  line-height: 32px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 1em;
+  width: auto;
+}
+#menu  ul li a:hover { /* efecto hover sobre los enlaces */
+  background-color: #EEF6FF;
+  color: #45415f;
+  text-decoration: none;
+}
+#menu  ul.level2, #menu ul.level3 { /* las listas desplegables */
+  background: #EEF6FF;
+  /*border: 1px solid #ABC;*/
+  left: 0px;
+  position: relative;
+  top: 0px;
+  visibility: hidden;
+}
+#menu  ul.level1{ /* las listas desplegables */
+    height: 33px;
+}
+#menu  ul.level2 li, #menu ul.level3 li { /* cada item de las listas desplegables */
+  float: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+}
+#menu  ul.level2 li a, #menu ul.level3 li a { /* cada enlace de las listas desplegables */
+  padding: 0 1em;
+}
+#menu  ul.level2 li a:hover,#menu  ul.level3 li a:hover { /* efecto hover sobre esos enlaces */
+  background-color: #EEF6FF;
+}
+ 
+#costosmodal tr
+	{mso-height-source:auto;}
+#costosmodal col
+	{mso-width-source:auto;}
+#costosmodal br
+	{mso-data-placement:same-cell;}
+#costosmodal .tg  {border-collapse:collapse;border-spacing:0;}
+#costosmodal .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+#costosmodal .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+#costosmodal .tg .tg-aih9{font-weight:bold;font-size:14px;background-color:#5b9bd5;color:#ffffff}
+#costosmodal .tg .tg-xqk4{font-weight:bold;font-size:14px;background-color:#c00000;color:#ffffff;vertical-align:top}
+#costosmodal .tg .tg-lqy6{text-align:right;vertical-align:top}
+#costosmodal .tg .tg-zui9{font-weight:bold;font-size:14px;background-color:#5b9bd5;color:#ffffff;text-align:center}
+ #costosmodal  .tg .tg-r51h{font-weight:bold;background-color:#5b9bd5;color:#ffffff}
+ #costosmodal  .tg .tg-7q2t{background-color:#fff3f3;text-align:right;vertical-align:top}
+ #costosmodal  .tg .tg-fhob{background-color:#f2f2f2;text-align:right;vertical-align:top}
+ #costosmodal  .tg .tg-yw4l{vertical-align:top}
+ 

@@ -1,0 +1,5 @@
+library(tidyverse)
+train <- read_csv('/var/www/html/bi/R/entrenamiento.csv')
+train_data_fram <- read.csv('/var/www/html/bi/R/entrenamiento.csv', stringsAsFactors = FALSE)
+modelo <- lm(Perimetro ~ IMC + Peso + Talla, data=train)
+predict(modelo,data.frame(IMC=31,Peso=104,Talla=182))

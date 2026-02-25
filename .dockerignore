@@ -1,0 +1,5 @@
+# No incluir el dump SQL en el contexto de build (solo se monta en initdb)
+360.2020.10.24.sql
+.git
+*.md
+!README.Docker.md

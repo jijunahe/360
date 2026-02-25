@@ -1,0 +1,76 @@
+ <div class="container">          
+
+    <!-- Modulo Titulo -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2 class="bor-1px"><strong>Productos</strong></h2>
+            </div>
+        </div><!-- /END Modulo Titulo -->
+
+     <!-- Modulo productos con categoriasy subcategorias -->
+
+    <div class="row">
+
+        <!-- Modulo categorias y subcategorias -->
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="dd" id="nestable3">
+                <ol id="myTab"  class="dd-list">
+				
+				
+ 					{# foreach from=$obj->categorias item=categoria key=id #}
+ 						<li class="dd-item dd3-item" data-id="{#$id+1#}">
+							<button type="button" class="pluss-min"><span class="icon-arrow-right5"></span></button>
+							<a href="?seccion={#$obj->seccion#}&categoria={#$categoria->id#}"  class="tab-lista">
+								<div class="dd3-content">{#$categoria->categoria#}</div>
+							</a>
+						</li>
+					{#/foreach#}				
+				
+				 
+                </ol>
+            </div>
+        </div><!-- /END Modulo categorias y subcategorias -->
+
+        <!-- Modulo productos dentro de categorias -->
+		{#if $obj->detalle!=""#}
+ 	         {#$obj->productos->texto#}
+ 			
+ 		{#else#}
+        <div class="col-lg-9 col-md-9 col-sm-9 tab-content">
+
+            <!-- Item1 tabs -->
+            
+                <!-- Modulo imagen texto icono -->
+ 				 {#assign var="COUNT" value=1#}
+				{# foreach from=$obj->productos item=producto key=id #}
+ 					{#if $COUNT==1#}
+					<div class="tab-pane active" id="item{#$id+1#}">
+					<div class="row">
+					{#/if#}
+                     <div class="col-lg-4 col-md-4 col-sm-4">
+                        <a href="#"><img class="img-left tam-ser" src="img/{#$producto->img#}" alt="Generic placeholder image"></a>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 alignleft">
+                                <h4 class="over-line">{#$producto->titulo#}</h4>
+                                <p class="over-text1">{#$producto->descripcion#}</p>
+                                <p class="boton_destacado"><a class="btn btn-default " href="?seccion={#$obj->seccion#}&producto={#$producto->id#}&detalle">Ver Má<span class="icon-plus3"></span>s</a></p>
+                            </div>
+                        </div>
+                    </div>
+  					{#if $COUNT==3#}
+						</div>
+					</div><!-- /END Item1 tabs -->
+						{#assign var="COUNT" value=0#}
+					{#/if#}
+					{#assign var="COUNT" value=$COUNT+1#}
+ 				{#/foreach#}
+			 
+
+        </div><!-- /END Modulo productos dentro de categorias -->
+		{#/if#}
+
+    </div><!-- /END Modulo concategoriasy subcategorias -->
+
+</div>
+<div class="push"></div>
+ 

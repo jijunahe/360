@@ -1,0 +1,134 @@
+<div class="contentForm" style="width:inherit;">
+    {#if $obj->modo=="editar" || $obj->modo=="agregar"#}
+    <form action="" method="post" name="editaAdmin">
+        <input type="hidden" name="itemId" id="itemId" value="{#$obj->mDetalle.id#}" />
+        <input type="hidden" name="type" id="type" value="{#$obj->modo#}" />
+        <div class="left">
+            <div class="left content_field">
+                <label for="fecha" class="font14 fontgris">Nombre</label><br>
+                <input type="text" class="rounded3" id="nombre" name="nombre" value="{#$obj->mDetalle.nombre#}"/>
+            </div>
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Usuario</label><br>
+                <input type="text" class="rounded3" id="user" name="user" value="{#$obj->mDetalle.login#}"/>
+            </div> 
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Email</label><br>
+                <input type="text" class="rounded3" id="email" name="email" value="{#$obj->mDetalle.email#}"/>
+            </div> 
+            <div class="left content_field">
+                <label for="perfil" class="font14 fontgris">Perfil</label><br>
+                <select class="rounded3" name="perfil" id="perfil">
+                	<option value="0">Seleccione un perfil</option>
+                    {#section name=k loop=$obj->mListPerfil#}
+                    	{#if $obj->mDetalle.perfil == $obj->mListPerfil[k]->id#}
+                    	<option value="{#$obj->mListPerfil[k]->id#}" selected="selected">{#$obj->mListPerfil[k]->perfil#}</option>
+                        {#else#}
+                        <option value="{#$obj->mListPerfil[k]->id#}">{#$obj->mListPerfil[k]->perfil#}</option>
+                        {#/if#}
+                    {#/section#}
+                </select>
+            </div>
+            {#if $obj->modo=="editar"#}
+            <div class="left content_field">
+                <label for="oldpass" class="font14 fontgris">Antigua clave</label><br>
+                <input type="password" class="rounded3" id="oldpass" name="oldpass" value=""/>
+            </div>
+            {#/if#}
+            <div class="left content_field">
+                <label for="newpass" class="font14 fontgris">Nueva clave</label><br>
+                <input type="password" class="rounded3" id="newpass" name="newpass" value=""/>
+            </div>
+            <div class="left btnAction">
+            	<input class="clearfix submit_frm left" style="margin-right:5px;" frmid="frmtplregistro" type="button" value="Guardar" onclick="return validaFormEditaAdmin('{#$obj->mLinkVolver#}');">
+            	<input class="clearfix submit_frm left" frmid="frmtplregistro" type="button" value="Cancelar" onclick="makeRedirect('{#$obj->mLinkVolver#}');">
+            </div>
+        </div>
+        <div class="left" id="errorField" style="color:#F00; margin:0 0 0 30px; display:none;"><div id="messageError"></div></div>
+    </form>
+    {#elseif $obj->modo=="ver"#}
+    	<div class="left">
+            <div class="left content_field">
+                <label for="fecha" class="font14 fontgris">Nombre</label><br>
+                {#$obj->mDetalle.nombre#}
+            </div>
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Usuario</label><br>
+                {#$obj->mDetalle.login#}
+            </div> 
+            <div class="left content_field">
+                <label for="dia" class="font14 fontgris">Email</label><br>
+                {#$obj->mDetalle.email#}
+            </div>
+            <div class="left content_field">
+                <label for="perfil" class="font14 fontgris">Perfil</label><br>
+                {#$obj->mDetalle.perfilName#}
+            </div>
+            <div class="left btnAction">            	
+            	<input class="clearfix submit_frm left" frmid="frmtplregistro" type="button" value="Cancelar" onclick="makeRedirect('{#$obj->mLinkVolver#}');">
+            </div>
+        </div>
+    {#elseif $obj->modo=="listado"#}
+	<div class="listado">
+    	<div class="left pagelist" style="height:auto;">
+        	<div class="pageNavigation">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="450">
+                    <tr>
+                        <td width="50">{#$obj->mPagination.mLinkPrimero#}</td>
+                        <td width="60">{#$obj->mPagination.mLinkAtras#}</td>
+                        <td align="center">{#$obj->mPagination.pagination#}</td>
+                        <td width="50">{#$obj->mPagination.mLinkSiguiente#}</td>
+                        <td width="50">{#$obj->mPagination.mLinkUltimo#}</td>
+                    </tr>
+                </table>
+            </div>        
+            <div class="search">
+            	<form class="" action="" method="" onsubmit="makeRedirect('{#$obj->mLinkVolver#}&searchText='+jQuery('#inputSearch').val()); return false;">
+                	<input class="left rounded3" type="text" name="inputSearch" id="inputSearch" value="{#$obj->mTextSearch#}" />
+                    <a href="javascript:void(0);" onclick="makeRedirect('{#$obj->mLinkVolver#}&searchText='+jQuery('#inputSearch').val()); return false;" class="left"><img src="images/iconSearch.png" border="0" align="absbottom" /></a>
+                </form>
+            </div>
+            <div class="btnAdd">
+            	<a href="{#$obj->mLinkAdd#}">
+                	<img src="images/iconAddUser.png" border="0" align="absmiddle" class="left" />
+                    <span style="float:left; margin:7px 0 0 0;">Agregar Nuevo</span>
+                </a>
+            </div>
+        </div>
+        <div class="left itemlist">
+            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+                <tr>
+                    <th align="left" width="250">Nombre</th>
+                    <th align="left">Email</th>
+                    <th align="left">Perfil</th>
+                    <th align="left" width="150">&nbsp;</th>
+                </tr>
+                {#section name=k loop=$obj->mLista#}
+                <tr>
+                    <td>{#$obj->mLista[k]->nombre#}</td>
+                    <td>{#$obj->mLista[k]->email#}</td>
+                    <td>{#$obj->mLista[k]->perfilName#}</td>
+                    <td align="center" class="btonActionItem" width="170">
+                    	{#if $obj->mLista[k]->id==$smarty.session.adminUser.id || $smarty.session.adminUser.perfil==1#}
+                        <a href="{#$obj->mLista[k]->linkEditar#}">
+                        	<img src="images/iconEditUser.png" border="0" align="middle" class="left" />
+                            <span style="float:left; margin:7px 0 0 5px;">Editar</span>
+                        </a>
+                        <a href="javascript:void(0);" onclick="confirmAction('¿Esta seguro de eliminar el registro?','{#$obj->mLista[k]->linkEliminar#}');">
+                        	<img src="images/iconDeleteUser.png" border="0" align="absmiddle" class="left" />
+                        	<span style="float:left; margin:7px 0 0 5px;">Eliminar</span>
+                        </a>                        
+                        {#else#}
+                        <a href="{#$obj->mLista[k]->linkVer#}">
+                        	<img src="images/iconEditUser.png" border="0" align="middle" class="left" />
+                            <span style="float:left; margin:7px 0 0 5px;">Ver</span>
+                        </a>
+                        {#/if#}
+                    </td>
+                </tr>
+                {#/section#}                
+            </table>
+		</div>
+    </div>
+    {#/if#}
+</div>

@@ -1,0 +1,19 @@
+<?php
+	
+	if(isset($_GET["mode"]) or isset($_POST["mode"])){
+		$mode="";
+		if(isset($_GET["mode"])){
+			$mode=$_GET["mode"];
+		}else if(isset($_POST["mode"])){
+			$mode=$_POST["mode"];
+		}
+		
+		if(file_exists(CONTENT_DIR.$mode.".php") and $mode!="master"){
+		 // printVar(CONTENT_DIR .$mode.'.php');
+			require_once CONTENT_DIR .$mode.'.php'; 
+			$objClass = new Action(); 
+			$objClass->init();			
+		}
+	}
+	
+?>

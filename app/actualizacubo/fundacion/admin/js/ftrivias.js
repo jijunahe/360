@@ -1,0 +1,297 @@
+jQuery(function(){
+ 	/*TRIVIAS*/
+	Trivia();
+	GuardarTrivia();
+
+});
+
+
+/*FUNCIONES PARA TRIVIA*/
+function Trivia(){
+	
+	jQuery("#TRIVIA .Items .tipo").change(function(){ jQuery(".config").css({"display":"none"});
+		if(jQuery(this).val()!=""){
+		
+ 		   var Obj=jQuery(this).parent().parent();
+			if(jQuery(this).val()==2){
+				jQuery(".respuestas").show();
+ 			}
+			if(jQuery(this).val()==1){
+				jQuery(".logos").show();
+				jQuery(".logos .ItemsImages").click(function(){
+				  var RelItem=jQuery(this).attr("rel");
+				  jQuery(".ItemsImages").removeClass("Selected");
+				  jQuery(this).addClass("Selected");
+				  jQuery("#logoSelected").val(RelItem)
+				
+				});
+			}
+		}Redimencion(); scroll(0,500)
+	});
+	addrespuestas();
+	Configelementos();
+
+}
+function Configelementos(){
+	/*ELIMINAR RESPUESTA*/
+	jQuery(".Configelementos img").click(function(){
+		var idRes=jQuery(this).attr("rel");
+		var idPreg=jQuery("#nombre_1").attr("rel");
+		var obj=jQuery(this);
+		jQuery.ajax({
+			url: 'ajax.php?',
+			type: 'POST',
+			dataType: 'html',
+			data: {
+				tipo: "trivias", 
+				type: 'eliminares',
+				idpregunta:idPreg,
+				idRespuesta:idRes
+			},
+			success: function (data){ 
+				if(data=="OK"){
+				   obj.parent().remove();
+				}
+			}
+		}); 
+	});
+	/*ACTUALIZA LA RESPUESTA CORRECTA*/
+	jQuery("input[name='rc']").click(function(){
+		var idRes=jQuery(this).val();
+		var idPreg=jQuery("#nombre_1").attr("rel");
+		jQuery.ajax({
+			url: 'ajax.php?',
+			type: 'POST',
+			dataType: 'html',
+			data: {
+				tipo: "trivias", 
+				type: 'actualizacorrecta',
+				idPregunta:idPreg,
+				idRespuesta:idRes
+			},
+			success: function (data){ 
+				
+				   console.log(data)
+				
+			}
+		});	});
+
+}
+function GuardarTrivia(){
+	jQuery("#guardarPreguntas").click(function(){
+	var Pregunta=jQuery("#nombre_1").val();
+	var TipoPregunta=jQuery("#nivel_1").val();
+	var VerificaLogo=0;
+	if(jQuery("#tipoPreguntaSelectes").size()>0 && jQuery("#tipoPreguntaSelectes").val()!=''){
+		TipoPregunta=jQuery("#tipoPreguntaSelectes").val();
+		VerificaLogo=jQuery("#nivel_1").val();
+	}
+	if(jQuery(".nivel").val()==""){
+		alert="Por favor selecciona un Nivel de juego";
+		jQuery.colorbox({ html:alert+btnClose, width:400 });
+		return false;
+	
+	}
+	
+	var idPregunta=jQuery("#idPreguntaTemp").val();
+	    if(Pregunta!="" && TipoPregunta!=""){
+		var Logo="";
+		var respuestas="";
+		var alert="";
+		var ValidaUpdate=1;
+		if(jQuery("#tipoPreguntaSelectes").size()>0){
+			 ValidaUpdate=jQuery("#tipoPreguntaSelectes").val();
+		}
+			/*LOGOS*/	
+			if(TipoPregunta==1 || VerificaLogo==1){
+ 				Logo=jQuery(".itemlist .Selected").attr("rel");
+				if( typeof Logo=='undefined'){
+					alert="Por favor selecciona un logo";
+					jQuery.colorbox({ html:alert+btnClose, width:400 });
+					return false;
+				}			
+			
+				if(ValidaUpdate==2){
+					
+					if(confirm(" Esta seguro ?  \n Esta es su última oportunidad .\n \n Todas las respuestas asociadas a esta pregunta saeran eliminadas.")){
+						
+						jQuery.ajax({
+							url: 'ajax.php?',
+							type: 'POST',
+							dataType: 'html',
+							data: {
+								tipo: "trivias", 
+								type: 'eliminarrespuestas',
+								'case': 1,
+								idpregunta:idPregunta
+							},
+							success: function (data){
+								if(data=="Ok"){
+								
+								}
+							}
+						}); 					
+					}else{
+						
+						return false;
+					}   
+
+							
+				}
+					jQuery.ajax({
+						url: 'ajax.php?',
+						type: 'POST',
+						dataType: 'html',
+						data: {
+							tipo: "trivias", 
+							type: 'subirdatos',
+							'case': 1,
+							logo:Logo,
+							pregunta:jQuery("#nombre_1").val(),
+							idpregunta:idPregunta,
+							idNivel:jQuery(".nivel").val()
+						},success: function (data){console.log(data);
+							if(data=="Ok"){
+							
+							}
+						}
+					}); 				
+ 			}
+			/*RESPUESTAS*/
+			if(TipoPregunta==2){
+				if(jQuery(".respuestas input[type='radio']:checked").size()==0 && jQuery("#TipoPregVal").size()==0){
+						alert="Por favor selecciona la respuesta que consideres correcta";
+						jQuery.colorbox({ html:alert+btnClose, width:400 });
+						return false;
+				}
+				var RespuestaCorrecta=jQuery(".respuestas input[type='radio']:checked").attr("rel");
+				var Count=jQuery(".resConf").size();
+				var i=0;
+				var bandera=true
+				var banderaValidaInsrtRespuesta="N";
+				if(jQuery("#tipoPreguntaSelectes").size()==0 || jQuery("#nivel_1").val()==2){
+					while(i<Count && bandera==true){
+						if(jQuery(".inputRespueta:eq("+i+")").val()==""){
+							bandera=false;
+						}i++;
+					}
+					if(bandera==false){
+						alert="Por favor, escriba las respuestas";
+						jQuery.colorbox({ html:alert+btnClose, width:400 });
+						return false;
+					}
+					banderaValidaInsrtRespuesta="S";
+				}
+				if(bandera==true){
+				
+					if(banderaValidaInsrtRespuesta=="S" && VerificaLogo==0){
+						var Respuesetas= "|";
+						var Correcto= "|";
+						for(i=0;i<Count;i++){
+							var ResTemp='N';
+							if((i+1)==RespuestaCorrecta){
+								ResTemp='S';
+							}
+							Respuesetas+=jQuery(".inputRespueta:eq("+i+")").val()+"|";
+							Correcto+=ResTemp+"|";
+							
+						}
+					}
+					
+ 					jQuery.ajax({
+							url: 'ajax.php?',
+							type: 'POST',
+							dataType: 'html',
+							data: {
+								tipo: "trivias", 
+								type: 'subirdatos',
+								'case': TipoPregunta,
+								respuestas:Respuesetas,
+								correcto:Correcto,
+								pregunta:jQuery("#nombre_1").val(),
+								idpregunta:idPregunta,
+								idNivel:jQuery(".nivel").val(),
+								valinsertres:banderaValidaInsrtRespuesta
+								
+							},
+							success: function (data){console.log("TEST")
+								if(data=="Ok"){
+								
+								}
+							}
+					}); 
+				
+				}
+			}
+		}else{
+			var alert="";
+			if(Pregunta==""){
+				alert+="Por favor,escribe una pregunta";
+			}
+			if(TipoPregunta==""){
+				alert+="<br>Por favor, selecciona un tipo de pregunta";
+
+			}
+		
+		    jQuery.colorbox({ html:alert+btnClose, width:400 });
+		}
+		
+		
+	
+	});
+}
+
+function addrespuestas(){
+	jQuery(".respuestas input[value='Agregar']").click(function(){
+	    Redimencion(); scroll(0,500)
+ 	    
+ 	    var Count=jQuery(".resConf").size();
+ 		var Respuesta=jQuery(".inputRespueta:eq("+(Count-1)+")").val();
+		if((Count==0 || Count<6) && Respuesta!=""){
+			if(Count==1){
+				jQuery("#t1").clone().appendTo("#tbody");
+				jQuery(".resConf:eq("+Count+")").attr("id","t2");
+				jQuery(".respuestas input[type='radio']:eq("+Count+")").attr("rel","2");
+				jQuery(".inputRespueta:eq("+Count+")").val("");
+			}else{
+				jQuery("#t1").clone().appendTo("#tbody");
+				jQuery(".resConf:eq("+Count+")").attr("id","t"+(Count+1));
+				jQuery(".respuestas input[type='radio']:eq("+Count+")").attr("rel",(Count+1));
+				jQuery(".inputRespueta:eq("+Count+")").val("");
+			}
+		}else{
+			if(Count==0 || Count<6){
+				jQuery.colorbox({ html:"Son demasiadas respuestas"+btnClose, width:400 });
+			}
+			if(Respuesta==''){
+				jQuery.colorbox({ html:"Por favor, agregue una respuesta"+btnClose, width:400 });
+				jQuery(".inputRespueta:eq("+(Count-1)+")").focus();
+			}
+		
+		}
+		jQuery("input[value='Eliminar']").click(function(){
+		var Obj=jQuery(this).parent().parent().parent();
+		   if(Obj.attr("id")!="t1"){
+			Obj.remove();
+		   }
+ 		}); 
+ 	});
+	
+
+}
+
+function Redimencion(){
+$win = $(window);
+
+		scroll(0,jQuery(".seccion").height()+arguments[0]);
+			 
+		$win.scroll(function () { 
+ 				myHeight = $(window).height();
+				myWidth = $(window).width();
+				jQuery('.seccion, .titleSeccion, .pagelist').width(myWidth-menuLeft-14);
+				jQuery('.seccion .itemlist').width( jQuery('.seccion, .titleSeccion, .pagelist').width()-20 );
+				myHeightSeccion = jQuery(".seccion").height();
+				jQuery('.sombra1').height( myHeightSeccion );
+		});	
+
+}

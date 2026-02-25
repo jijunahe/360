@@ -1,0 +1,372 @@
+@import url("../css/reset.css");
+html{
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin: 0px;
+	background-color:#FFF;	
+	overflow-x:hidden;
+}
+
+a{color:#000;}
+
+.bold{font-weight:bold;}
+
+.left{float:left;}
+.right{float:right;}
+
+.fontgris{color:#333;}
+.fontred{color:#F00;}
+.fontwhite{color:#fff;}
+
+.font9{font-size:9px;}
+.font12{font-size:12px;}
+.font14{font-size:14px;}
+
+.rounded3{border-radius:3px;}
+.rounded12{border-radius:12px; border:1px solid #ccc;}
+.rounded15{border-radius:15px;}
+
+/*------ Clear Fix ------*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.Selected{
+ border:blue solid;	
+	
+}
+.clearfix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+.border{border:1px solid #F00;}
+.bordergray2{border:2px solid #999;}
+
+/*Header*/
+.header{
+	padding:20px 10px;
+}
+
+/*Estilo principal de contenido*/
+.contenido{
+	margin:0 5px;
+	width:100%;	
+}
+
+.logo{	
+	
+}
+
+.sombra1{
+	background:url(../images/sombra.png) repeat-y;
+	float:left;
+	min-height:200px;
+	width:4px;    
+}
+
+/*Estilo para Popup*/
+.popup{
+	background:url(../images/pixel.png) repeat;
+	top:0;
+	width:100%;
+	height:auto;
+	position:absolute;
+}
+
+/*Estilo para mensage de error*/
+.errorMessage{
+	color:#FFF;
+	background-color:#262262;
+	border:2px solid #FFF;
+	width:165px;
+	position:absolute;
+	left:50%;
+	margin:215px 0 0 -87px;
+	padding:10px 5px;
+	text-align:center;
+}
+
+/*LOADING*/
+/*loading de la page*/
+
+#loader{
+	position:fixed;/*agregamos una posiciÃ³n absoluta para que nos permita mover la capa en el espacio del navegador*/
+	top:0;/*posicionamiento en Y */
+	left:0;/*pocisionamiento en X*/
+	z-index:10000000000000; /* Le asignamos la pocisiÃ³n mÃ¡s alta en el DOM */
+	background-color:#000; /* le asignamos un color de fondo */
+	width:100%; /* maximo ancho de la pantalla */
+	height:5000px; /* maxima altura de la pantalla */
+	display:block; /* mostramos el layer */
+	color:#fff;
+}
+#loader .img_preload{
+	top:300px;
+	left:50%;
+	margin:0px 0 0 -120px;
+	width:239px;
+	height:59px;
+	position:absolute;
+}
+/*loading de la page*/
+
+/*LOGIN*/
+.login{
+	margin:200px auto 0 auto;
+	width:250px;
+}
+
+.contentLogin{
+	background:#CCC;
+	height:135px;	
+	padding:20px 25px;	
+}
+
+.login .inputdiv{
+	margin:0 0 10px 0;
+}
+
+.login label{
+	font-size:14px;
+	font-weight:normal;
+}
+
+.login input[type="text"], .login input[type="password"]{
+	background:url(../images/bg-input.gif);
+	border:1px solid #ccc;
+	font-size:14px;
+	height:25px;
+	width:200px;
+}
+
+.login input[type="submit"], input[type="button"], input[type="submit"]{
+	background:#666;
+	border:0;
+	color:#FFF;
+	cursor:pointer;
+	font-weight:bold;
+	padding:3px 7px;
+}
+
+.login .logintext{
+	font-size:16px;
+	font-weight:bold;
+	margin:3px 0;
+}
+
+.login h3{
+	color:#f00;
+	font-size:12px;
+}
+
+/*FIN LOGIN*/
+
+/*Menu Top Right*/
+.menuTopRight{
+	margin:30px 10px 0 0;
+	position:absolute;	
+	right:0;
+	top:0;
+}
+/*Fin Menu Top Right*/
+
+/*Menu Left*/
+.menuLeft{
+	padding:0;
+	min-height:220px;
+	width:246px;
+}
+
+.menuLeft ul{	
+	list-style:none;
+	margin:0;
+	padding:0;
+	width:inherit;
+}
+
+.menuLeft ul li{
+	background:#999;
+	border-left:7px solid #666;
+	margin:0 0 3px 0;
+	padding:0;
+	width:238px;
+}
+
+.menuLeft ul li a{
+	color:#FFF;
+	display:block;
+	padding:7px 0px 7px 5px;
+	text-decoration:none;
+	width:240px;
+}
+/*Fin Menu Left*/
+
+/*Content Seccion*/
+.seccion{
+	background:#F6F6F6;
+	border:0px solid #EEE;
+	margin:0;
+	min-height:200px;
+}
+
+.seccion .content_field, .seccion .btnAction{
+	margin:8px 15px;
+	width: 260px;
+	min-height: 70px;
+}
+
+.seccion .btnAction{
+	margin:25px 15px 8px 15px;
+}
+
+.seccion .content_textArea{
+	margin:8px 15px;
+	min-height: 70px;
+	width:500px;
+}
+
+.section .submit_frm{
+	border:1px solid #F00;
+	margin:0 5px 0 15px !important;
+}
+
+.seccion input.text, .seccion input.password, .seccion input.file, .seccion input[type=text], .seccion input[type=password], .seccion input[type=file], .seccion select, .seccion textarea, .seccion checkbox, .seccionModal input[type=text]{
+	background:#FFF;
+	border:1px solid #ccc;
+	height:26px; height:18px\0/;
+	outline:0px;
+	padding:0 2px; padding:4px 2px\0/;
+	width:244px;
+}
+
+.seccion input[type="radio"], .seccion label.radio{
+	float:left;
+	margin:10px 0 0 0;
+}
+
+.seccion label.radio{
+	margin:8px 15px 0 5px;
+}
+
+.seccion input.fecha{
+	width:215px;
+}
+
+.seccion select, .seccion select option{
+	height:26px;
+}
+
+.seccionModal{
+	background:#FFF;
+	margin:15px 0 0 0;
+	padding:10px;
+}
+
+.itemlist{
+	margin:10px 0 10px 0;
+	padding:0 10px;
+}
+
+.itemlist table{
+	border:2px solid #999;
+}
+
+.itemlist table tr th{
+	border-bottom:2px solid #999;
+	font-size:14px;
+	padding:5px;
+}
+
+.itemlist table tr td{
+	border-bottom:1px solid #333;
+	font-size:12px;
+	padding:10px 5px;
+}
+
+ 
+.itemlist table tr:nth-child(2n){
+	background:#FFF;
+}
+
+.itemlist table tr td a{
+	display:block;
+	float:left;
+	height:30px;
+	margin:0 10px 0 5px;
+	width:auto;
+}
+
+.seccion .listado .search{	
+	height:23px;
+	float:left;
+	margin:-5px 0 0 10px;
+	width:auto;
+}
+
+.seccion .listado .pagelist{margin:15px 0 0 0;}
+.seccion .listado .pagelist .btnAdd{float:right; height:26px; margin:-7px 10px 0 10px; width:auto;}
+.seccion .listado .pagelist a{color:#666666; font-size:12px;}
+.seccion .listado .pagelist .pageNavigation{float:left; height:26px; margin:0 15px 0 10px; width:450px;}
+/*Fin Content Seccion*/
+
+/*Paginacion*/
+.seccion .listado .pagelist td{color:#666666; font-size:12px;}
+.seccion .listado a:link.page{color:#666666; text-decoration:none;} 
+.seccion .listado a:visited.page{color:#666666; text-decoration:none;} 
+.seccion .listado a:hover.page{color:#666666; text-decoration:underline;} 
+.seccion .listado a:active.page{color:#000000; text-decoration:none;}
+
+.seccion .listado a:link.page_activo{color:#000000; text-decoration:none;} 
+.seccion .listado a:visited.page_activo{color:#000000; text-decoration:none;} 
+.seccion .listado a:hover.page_activo{color:#000000; text-decoration:underline;} 
+.seccion .listado a:active.page_activo{color:#000000;	text-decoration:none;}
+/*Fin Paginacion*/
+
+/*Mensajes de Errores*/
+#messageError, #messageHtml{
+	background:#FFF;
+	border:2px solid #999;
+	color:#F00;
+	margin:15px 0 0 0;
+	padding:10px;
+}
+
+.errorMessageForm{
+	color:#F00;
+	font-size:13px;
+	margin:0 0 0 10px;
+	padding:5px 0 0 0;
+}
+/*Fin Mensajes de Errores*/
+
+/*Formulario del listado*/
+.formItemList{
+	border:0px solid #F00;
+}
+
+.mostarInput .input{
+	display:none;
+}
+
+.mostarInput input.input{
+	max-width:80px;
+}
+/*Fin Formulario del listado*/

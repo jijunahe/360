@@ -1,0 +1,40 @@
+<div class="seccionModal bordergray2">
+    <div>
+    <form id="ipNuevo" name="ipNuevo" action="" method="POST">
+    <b class="text">Ip nueva</b>
+    <hr>
+    <table>
+        <tr>
+            <td><label class="font14 fontgris">IP:</label></td><td><input class="rounded3 font12" name="ip" id="ip" type="text" />&nbsp;&nbsp;&nbsp;</td>
+            <td><label class="font14 fontgris">Resumen:</label></td><td><input class="rounded3 font12" name="resumen" id="resumen" type="text" /></td>
+            <td><a href="javascript:void(0);" onclick="validateSaveIp();"><img src="images/iconSave.png" border="0" align="" /></a></td>
+        </tr>
+    </table>	
+    </form>
+    </div>
+    
+    <div class="itemlist fontgris">
+        <table border="0" cellpadding="0" cellspacing="0" align="center" width="600">
+            <tr>
+                <th align="left" width="40">ID</th>
+                <th align="left" width="120">IP</th>
+                <th align="left" width="305">RESUMEN</th>
+                <th align="left" width="100">&nbsp;</th>
+            </tr>
+            {#section name=k loop=$obj->mLista#}
+            <tr>
+                <td>{#$obj->mLista[k]->id#}</td>
+                <td>{#$obj->mLista[k]->ip#}</td>
+                <td>{#$obj->mLista[k]->resumen#}</td>
+                <td align="center" class="btonActionItem">                
+                    <a href="javascript:void(0);" onclick="deleteItem('¿Esta seguro de eliminar el registro?','managerIp', '{#$obj->mLista[k]->id#}');">
+                        <img src="images/iconDelete.png" border="0" align="absmiddle" class="left" />
+                        <span style="float:left; margin:7px 0 0 5px;">Eliminar</span>
+                    </a>
+                </td>
+            </tr>
+            {#/section#}                
+        </table>
+    </div>
+</div>
+<div class="left" id="errorField" style="color:#F00; margin:0 0 0 30px; display:none;"><div id="messageError"></div></div>

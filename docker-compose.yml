@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8082:80"   # 8081 en el host (8080 suele estar ocupado)
+    volumes:
+      - ./app:/var/www/html/app
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: 360_produccion
+      DB_USER: root
+      DB_PASSWORD: root_secret
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mysql:5.5
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secret
+      MYSQL_DATABASE: 360_produccion
+      MYSQL_USER: evaluacion360
+      MYSQL_PASSWORD: evaluacion360_secret
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "3308:3306"   # 3308 en el host (3306/3307 suelen estar ocupados)
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_secret"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  initdb:
+    image: mysql:5.5
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        echo "Esperando a que MySQL acepte conexiones..."
+        until mysql -h db -u root -proot_secret -e "SELECT 1" 2>/dev/null; do
+          sleep 3
+        done
+        echo "Importando 360.2020.10.24.sql en 360_produccion (puede tardar varios minutos)..."
+        mysql -h db -u root -proot_secret 360_produccion < /sql/360.2020.10.24.sql
+        echo "Importación finalizada."
+    volumes:
+      - ./360.2020.10.24.sql:/sql/360.2020.10.24.sql:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+volumes:
+  mysql_data:

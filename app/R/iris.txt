@@ -1,0 +1,40 @@
+## Visualización de una variable categorica ===
+library(tidyverse)
+theme_set(theme_bw())
+
+# Cargando los datos de titanic
+path_to_data <- 'https://raw.githubusercontent.com/quantcompany/Springboard_FDS/master/titanic_original.csv'
+titanic <- read.csv(path_to_data, stringsAsFactors = FALSE, na.strings = '')
+
+
+# Graficos de barras ===
+ 
+ 
+titanic$sex <- factor(titanic$sex)
+ 
+## Ejercicios 1 =====
+# Graficar el numero de diamantes con precio por debajo y por encima de 4000
+
+# Graficar el numero de observaciones en flights 
+# en cada mes, interpretar
+
+ 
+## Otros graficos de barras (dos variables) ===
+
+titanic$survived2 <- factor(titanic$survived, levels = c(0,1), labels = c('No','Yes'))
+
+  
+## Ejercicios 2 ====
+# Escoja dos variables categoricas de titinic
+# visualice de la mejor manera e interprete los resultados 
+
+# Visualice en un mosaic plot day vs. month en flights
+
+
+# Hay una mejor manera de visualizar la cantidad de vuelos en cada
+# Dia de los meses del año?
+
+# Visualice el numero de observaciones por cada mes y por origen
+# en el dataset flights
+
+

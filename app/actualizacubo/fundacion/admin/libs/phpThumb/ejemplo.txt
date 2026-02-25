@@ -1,0 +1,7 @@
+$returnClassFile = ClassFile::UploadImagenFileProduct("imagen1", 'images/productos', 'product_'.$ultimoId, 'product_'.$ultimoId);
+//Validamos que se subio el archivo exitosamente, si es asi hacemos el update en la base de datos
+
+if(!isset($returnClassFile['Error'])){
+    Producto::ProductUpdateImg($ultimoId , $returnClassFile['NameFile']);
+}
+$this->mErrorMessage = 'el item se agrego';

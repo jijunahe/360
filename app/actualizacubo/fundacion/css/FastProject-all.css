@@ -1,0 +1,15 @@
+/*
+enesta hoja de style llamamos las hojas independientes de cada plantilla que vallamos a utilizar en el sitio a realizar.
+
+	Autor:    Jhonathan Calvo
+	Fecha:    28 - 10 -2013
+	proyecto: Fastproject
+
+*/
+
+/*Forma corecta de llamar las hojas de estylo*/
+@import "home1.css";
+@import "home2.css";
+
+
+/*Porfavor no crear stylos nuevos aca para crear stylos existe un archivo llamado custom.css*/
