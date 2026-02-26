@@ -1,0 +1,232 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
+<meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="{TEMPLATEURL}js/felicidad.js"></script>
+   <!-- The following line includes jquery-ui.css or jquery-ui-custom.css from template dir, template.css and needed specific css file for survey -->
+{TEMPLATECSS}
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
+{TEMPLATEJS}
+{GOOGLE_ANALYTICS_JAVASCRIPT}
+
+<style>
+
+	body{
+		font-family: 'Roboto', sans-serif;
+ 	}
+	.bgavi{
+    font-family: Roboto;
+    line-height: 1.25em;
+	/*background: url(/hseq/upload/templates/skeletonquest/images/bg.jpg);*/
+	background: rgb(232,248,249);
+	
+	color: #333333;
+	}
+	.logo{
+    margin-left: 8px;
+    float: left;
+    width: 8%;
+	}
+	.left{
+		float: left;
+		width: 89%;
+		font-size: 13px;
+		padding: 20px 19px 0 1px;
+ 	}
+	#content{overflow-x: hidden !important;}
+ 	
+	@media screen and (min-width: 324px) and (max-width:500px) {
+    /*.logo {
+	width: 40%;
+	
+    }*/
+    #sitename{
+ 		font-size: 1em;
+    }
+    .left{
+		width: 57%;
+ 	
+    }
+	
+	}
+	
+	@media screen and (min-width: 200px) and (max-width:924px) {
+	#aviancahome {
+	
+		width: 100% !important;
+		clear:both;
+	
+    }
+    #textohome{ width: 100% !important;line-height: initial !important;}
+	}
+	
+	
+	@media screen and (min-width: 200px) and (max-width:640px) {
+    #container {
+	
+		clear: both !important;
+	
+	
+    }
+	
+	}
+	
+	
+	
+	
+	
+	
+	@media screen  and  (max-width: 960px) {
+ 
+		#sitename{
+		
+		font-size: 23px;
+		}
+		.left{
+			width: 88%;
+		
+		
+		}
+	
+	}
+ 	
+	@media screen  and  (max-width: 934px) {
+ 
+		#sitename{
+		
+		font-size: 20px;
+		}
+		.left{
+			width: 88%;
+		
+		
+		}
+	
+	}
+	
+ 	
+	@media screen  and  (max-width: 814px) {
+ 
+		#sitename{
+		
+		font-size: 20px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 12px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+ 	
+	@media screen  and  (max-width: 676px) {
+ 
+		#sitename{
+		
+		font-size: 16px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 10px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	@media screen  and  (max-width: 576px) {
+ 
+		#sitename{
+		
+		font-size: 13px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 6px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+	@media screen  and  (max-width: 540px) {
+ 
+		#sitename{
+		
+		font-size: 12px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 6px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+	
+	@media screen  and  (max-width: 350px) {
+ 
+		#sitename{
+		
+		font-size: 12px;
+		}
+		.left{
+			width: 70%;
+			padding: 20px 6px 0 1px;
+		
+		}
+		.left h1{  text-align:left !important;  padding-left: 14px; font-size:19px !important;}
+		.logo {
+			float: right;
+ 			padding: 11px 6px 0 1px;
+		}
+		.logo img{
+			float:right;
+			width:230%;
+		}
+	
+	}
+	
+ 	
+	
+	
+</style>
+ 
+ 			
+</head>
+<!--[if lt IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie6 ielt7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 8 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie8ielt9  no-js"> <![endif]-->
+<!--[if IE 9 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie9 no-js"> <![endif]-->
+<!--[if gt IE 9]><!--><body id="body" class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js"><!--<![endif]-->
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]);/*]]>*/</script>
+ 
+	
+	
+	<div id="container" class="bgavi">
+		<div id="head" style="color:#fff;">
+			<div class="wrapper">
+			<!--<a href="#" title="Made with LimeSurvey" id="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " id="logo"/></a>FACTORES DE RIESGO PARA ENFERMEDAD DEL CORAZÓN -->
+ 				<!--<a href="#" title="Made with LimeSurvey" id="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " id="logo"/></a>-->
+				<div class="left"> <div class="tools">{LANGUAGECHANGER}</div><h1 id="sitename" style="color:#fff;text-align: center;font-weight: bold;">{SURVEYNAME}</h1></div><div class="logo"><img src="/clima/upload/templates/felicidad/images/logo.jpg" width="100%"></div>
+ 			
+			</div>
+			</div>
+ 			<div id="content" class="outerframe">
+						

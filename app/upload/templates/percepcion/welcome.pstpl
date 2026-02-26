@@ -1,0 +1,28 @@
+{CHECKJAVASCRIPT}
+<div id="welcome" style="background-color:#fff" >
+    <div style="width:70%; float:left" id="aviancahome"> <img src="/hseq/upload/templates/skeletonquest/images/med.png" width="100%"/></div>
+    <div style="width:28%; float:left;line-height:28px;padding: 9px;margin-top: 29px" id="textohome">
+        
+        <!--p id='surveydescription' class="text" style="font-family:tahoma,geneva,sans-serif;">{SURVEYDESCRIPTION}</p>
+		<p id='surveywelcome' class="text">{WELCOME}</p-->
+		
+		<p><b>BIENVENIDO</b> <br>
+			Pacific Rubiales Energy Colombia es una Organización Saludable certificada por la Federación Colombiana Del Corazón.<br>
+			Dentro del proceso de certificación debemos conocer con mayor detalle tus estilos de vida (alimentación, hábitos, etc) y los factores de riesgo de algunas enfermedades (osteomuscular, diabetes, cáncer, etc).<br>
+			</p>
+	</div>
+	<div style="width:100%; float:left;line-height:28px;padding: 9px;margin-top: 29px" >
+		<p>Para esto a continuación te pedimos responder sinceramente la siguiente encuesta. Con esta información podremos formular estrategias para ayudarte a mantener y mejorar tu condición de salud.<br>
+			
+			Toda la información reunida será manejada con criterios de información privada y alimentará Mi HSEQ que es una nueva plataforma tecnológica en la que centralizaremos toda la información relacionada con la salud, seguridad, medio ambiente y calidad de las personas de la corporación.<br>
+			
+		Gracias por tu participación activa en esta iniciativa.</p>
+	
+	</div>
+	
+<!--p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p-->   
+	<div style="clear:both"></div>
+	
+</div>
+<input type="checkbox" id="accepta" style="width:30px;height:30px;float:left" ><label style="line-height: 32px;">Acepto los <a href="javascript:;" rel="terminos">Terminos y condiciones</a></label>
+ 

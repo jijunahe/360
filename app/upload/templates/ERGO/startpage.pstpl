@@ -1,0 +1,276 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
+<meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" src="{TEMPLATEURL}js/jquery.csv-0.71.js"></script>
+<script type="text/javascript" src="{TEMPLATEURL}js/colorbox/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="{TEMPLATEURL}js/colorbox/example1/colorbox.css">
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="{TEMPLATEURL}js/jquery.geocomplete.min.js"></script>
+ <script type="text/javascript" src="{TEMPLATEURL}js/scripts.js"></script>
+
+<!-- The following line includes jquery-ui.css or jquery-ui-custom.css from template dir, template.css and needed specific css file for survey -->
+{TEMPLATECSS}
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
+<!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
+{TEMPLATEJS}
+{GOOGLE_ANALYTICS_JAVASCRIPT}
+
+<style>
+ 
+	body{
+		font-family: 'Roboto', sans-serif;
+ 	}
+	.bgavi{
+    font-family: Roboto;
+    line-height: 1.25em;
+	/*background: url(/hseq/upload/templates/skeletonquest/images/bg.jpg);*/
+	background: rgb(232,248,249);
+	
+	color: #333333;
+	}
+	.logo{
+    margin-left: 8px;
+    float: left;
+    width: 8%;
+	}
+	.left{
+		float: left;
+		width: 89%;
+		font-size: 13px;
+		padding: 20px 19px 0 1px;
+ 	}
+	#content{overflow-x: hidden !important;}
+ 	
+	@media screen and (min-width: 324px) and (max-width:500px) {
+    /*.logo {
+	width: 40%;
+	
+    }*/
+    #sitename{
+ 		font-size: 1em;
+    }
+    .left{
+		width: 57%;
+ 	
+    }
+	
+	}
+	
+	@media screen and (min-width: 200px) and (max-width:924px) {
+	#aviancahome {
+	
+		width: 100% !important;
+		clear:both;
+	
+    }
+    #textohome{ width: 100% !important;line-height: initial !important;}
+	}
+	
+	
+	@media screen and (min-width: 200px) and (max-width:640px) {
+    #container {
+	
+		clear: both !important;
+	
+	
+    }
+	
+	}
+	
+	
+	
+	
+	
+	
+	@media screen  and  (max-width: 960px) {
+ 
+		#sitename{
+		
+		font-size: 23px;
+		}
+		.left{
+			width: 88%;
+		
+		
+		}
+	
+	}
+ 	
+	@media screen  and  (max-width: 934px) {
+ 
+		#sitename{
+		
+		font-size: 20px;
+		}
+		.left{
+			width: 88%;
+		
+		
+		}
+	
+	}
+	
+ 	
+	@media screen  and  (max-width: 814px) {
+ 
+		#sitename{
+		
+		font-size: 20px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 12px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+ 	
+	@media screen  and  (max-width: 676px) {
+ 
+		#sitename{
+		
+		font-size: 16px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 10px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	@media screen  and  (max-width: 576px) {
+ 
+		#sitename{
+		
+		font-size: 13px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 6px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+	@media screen  and  (max-width: 540px) {
+ 
+		#sitename{
+		
+		font-size: 12px;
+		}
+		.left{
+			width: 88%;
+			padding: 20px 6px 0 1px;
+		
+		}
+		.logo {
+			margin-left: 0px;
+ 			width: 10%;
+		}		
+	
+	}
+	
+ 	
+	
+	
+	
+</style>
+
+
+</head>
+<!--[if lt IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie6 ielt7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 8 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie8ielt9  no-js"> <![endif]-->
+<!--[if IE 9 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie9 no-js"> <![endif]-->
+<!--[if gt IE 9]><!--><body id="body" class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js"><!--<![endif]-->
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]);/*]]>*/</script>
+	<div id="terminos" style="display:none">
+		<div id="modal">
+			
+			
+			<div class="WordSection1">
+				
+				<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+				Arial;color:#444444">AVISO DE PROTECCIÓN DE DATOS PERSONALES</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+				
+				<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+					Arial;color:#444444">En virtud de la entrada en vigencia de la Ley Estatutaria
+						1581 del 2012 mediante la cual se dictan las disposiciones generales para la
+						protección de datos personales,<span class="apple-converted-space">&nbsp;</span><span class="il">y</span><span class="apple-converted-space">&nbsp;</span>su Decreto
+						Reglamentario 1377 de 2013, la Fundación
+						Colombiana del Corazón, consideradas como responsables<span class="apple-converted-space">&nbsp;</span><span class="il">y</span>/o encargadas
+						del tratamiento de datos personales, requieren de su autorización para
+						continuar con el tratamiento de sus datos personales almacenados en nuestras
+						bases de datos, las cuales incluyen información que ustedes nos han reportado
+						en desarrollo de las diferentes actividades realizadas por nuestra compañía, en
+					particular los siguientes: nombres y profesión.</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+					
+					<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+					Arial;color:#444444">Finalidad: Los datos serán utilizados para:</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+					
+					<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+						Arial;color:#444444">La información<span class="apple-converted-space">&nbsp;</span><span class="il">y</span><span class="apple-converted-space">&nbsp;</span>datos
+							personales suministrado, podrán ser procesados, recolectados, almacenados,
+							usados, circulados, suprimidos, compartidos, actualizados, las actividades
+							mencionadas las podremos realizar a través de diferentes medios tales como
+							correo físico, electrónico, celular o dispositivo móvil, vía mensajes de texto
+							(1\1 S<span class="apple-converted-space">&nbsp;</span><span class="il">y</span>/o
+						MMS), o a través de cualquier medio análogo<span class="apple-converted-space">&nbsp;</span><span class="il">y</span>/o digital de comunicación, conocido o por conocer.</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+						
+						<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+							Arial;color:#444444">Derechos: Los derechos que le asisten sobre sus datos
+								personales son: conocer, actualizar<span class="apple-converted-space">&nbsp;</span><span class="il">y</span><span class="apple-converted-space">&nbsp;</span>solicitar la
+								rectificación o supresión de datos; conocer el uso que hace la Fundación Colombiana del Corazón con sus datos personales</span></i>&nbsp;y&nbsp;<i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+							Arial;color:#444444">revocar en cualquier momento la autorización de la
+								inclusión de sus datos personales en las bases de datos de la Fundación Colombiana del Corazón, no recolecta ni maneja información
+								sobre datos sensibles. En el evento de llegar a solicitar información sobre
+							este tipo de datos, se deja constancia que la repuesta es totalmente facultativa.</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+							
+							<p style="margin-bottom:11.25pt;line-height:13.15pt;background:#FAFAFA"><i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+								Arial;color:#444444">Autorización: Los Titulares podrán ejercer sus derechos de
+								conocer, actualizar, rectificar</span></i>&nbsp;y&nbsp;<i><span style="font-size:10.0pt;font-family:&quot;Trebuchet MS&quot;,sans-serif;mso-bidi-font-family:
+								Arial;color:#444444">suprimir sus datos personales enviando su solicitud
+									a&nbsp;<a href="mailto:mercadeo@servinformacion.com" target="_blank"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif;color:#444444;
+									font-style:normal;text-decoration:none;text-underline:none">al</span></a>&nbsp;área
+									de HSE la Fundación Colombiana del
+									Corazón, dentro de los treinta días (30) siguientes a
+									la fecha de este comunicado. Si usted no da respuesta entenderemos que ha
+									autorizado la Fundación Colombiana del
+									Corazón para continuar con el tratamiento de sus datos
+								personales, tal como lo establece la ley 1581 de 2012.</span></i><span style="font-size:9.5pt;font-family:&quot;Arial&quot;,sans-serif;color:#222222"><o:p></o:p></span></p>
+								
+								<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+								
+			</div>			
+			
+			
+			
+			
+		</div>
+		
+	</div>
+	
+	<div id="container" class="bgavi">
+		<!--div id="head" style="color:#fff;background-color:#ff001b">
+			<div class="wrapper">
+ 				<div class="left"> <div class="tools">{LANGUAGECHANGER}</div><h1 id="sitename" style="color:#fff;text-align: center;font-weight: bold;">ENCUESTA "LA CULTURA DEL CUIDADO PARA CORAZONES RESPONSABLES"</h1></div><div class="logo"><img src="/hseq/upload/templates/skeletonquest2/images/logos.png" width="100%"></div>
+			</div>
+		</div><br><br><br-->
+		<div id="title"><h2 id="surveytitle" class="wrapper">{SURVEYNAME}</h2></div>
+		<div id="content" class="outerframe">
+				

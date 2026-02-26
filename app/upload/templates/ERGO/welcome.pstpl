@@ -1,0 +1,42 @@
+{CHECKJAVASCRIPT}
+<div id="welcome" style="background-color:#fff" >
+      
+	<div style="width:99%; float:left;line-height:20px;padding: 9px;" >
+
+	
+<p><b>Estimado colaborador (a).</b></p><p>		
+
+
+<p>Queremos invitarle cordialmente a participar en una encuesta sobre condiciones relacionadas con el trabajo que usted desarrolla.
+</p><p>
+Hasta ahora hay poca información en relación a las condiciones de trabajo y sobre la salud de los trabajadores en América Latina. Estos datos son fundamentales para saber más sobre la situación de los trabajadores. A partir de estos estudios se generan estrategias de mejoramiento para conocer y mejorar sostenidamente las condiciones de trabajo y de salud de los trabajadores. La encuesta se aplica en diferentes lugares de trabajo de los países de América Latina.
+</p><p>
+Estas encuestas son coordinadas por el Centro para la Salud Internacional de la Universidad Ludwig-Maximilians de Múnich y cuentan con el aval del Comité ético de Pacific E&P.
+</p><p>
+Por favor, complete el cuestionario a continuación y pulse la opción enviar al final del cuestionario.  La participación en el estudio no es obligatoria. Si no desea participar esto no le perjudicará en absoluto. Para el éxito del estudio es deseable que usted participe de ser posible. 
+</p><p>
+Declaración de confidencialidad:
+</p><p>
+En este estudio se respetarán las reglas de discreción médica y la política de privacidad. No se solicitan datos personales por lo tanto toda la información será recaudada guardada y utilizada en el futuro de manera anónima e irreversible. 
+</p><p>
+En caso de preguntas diríjase a GILBERT CARREÑO TRIANA (Teléfono 3214906070).
+</p><p>
+¡Muchas gracias por su apoyo!
+</p><p>	
+	
+	
+	
+	
+	</div>
+	
+<!--p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p-->   
+	<div style="clear:both"></div>
+	
+</div>
+<input type="checkbox" id="accepta" style="width:35px;height:35px;float:left">
+<button type="button" id="terminosb"  rel="terminos" value="movenext" name="terminosb" accesskey="n" class="submit button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary" style="float:left" role="button" aria-disabled="false">
+	<span class="ui-button-text" style="float: left;">Acepto los Terminos y condiciones</span>
+	<span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-e" style="float: left; bottom: -6px;"></span>
+</button>
+  
+ 

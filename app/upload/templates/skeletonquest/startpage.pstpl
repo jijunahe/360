@@ -1,0 +1,132 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
+    <meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 	
+<script type="text/javascript" src="/clima/js/jquery.csv-0.71.js"></script>
+<script type="text/javascript" src="/clima/js/colorbox/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="/clima/js/colorbox/example1/colorbox.css">
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="/companies/js/jquery.geocomplete.min.js"></script>
+ <script type="text/javascript" src="/clima/js/clima.js"></script>	
+	
+	
+	
+	
+	
+    <!-- The following line includes jquery-ui.css or jquery-ui-custom.css from template dir, template.css and needed specific css file for survey -->
+    {TEMPLATECSS}
+
+    <link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
+    <!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
+    {TEMPLATEJS}
+    {GOOGLE_ANALYTICS_JAVASCRIPT}
+
+<style>
+.bgavi{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 1.25em;
+	background: url(/avianca/upload/templates/skeletonquest/images/bg.jpg);
+ 
+	color: #333333;
+ }
+ .logo{
+ 
+ float:left;
+ width:20%;
+ }
+.left{
+ 
+float: left;
+margin-left: 2%;
+width: 72%;
+
+}
+#content{overflow-x: hidden !important;}
+
+
+
+@media screen and (min-width: 324px) and (max-width:500px) {
+    .logo {
+        width: 40%;
+        
+    }
+    #sitename{
+        
+        font-size: 1em;
+    }
+    .left{
+        width: 57%;
+        
+        
+        
+    }
+  
+}
+
+@media screen and (min-width: 200px) and (max-width:924px) {
+     #aviancahome {
+        
+         width: 100% !important;
+         clear:both;
+        
+    }
+    #textohome{ width: 100% !important;line-height: initial !important;}
+}
+
+
+@media screen and (min-width: 200px) and (max-width:640px) {
+    #container {
+        
+         clear: both !important;
+         
+        
+    }
+   
+}
+
+
+
+
+
+
+@media screen  and  (max-width: 323px) {
+    .logo {
+        width: 47%;
+        
+    }
+    #sitename{
+        
+        font-size: 10px;
+    }
+    .left{
+        width: 49%;
+        
+        
+    }
+     
+}
+
+
+
+</style>
+
+</head>
+<!--[if lt IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie6 ielt7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 8 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie8ielt9  no-js"> <![endif]-->
+<!--[if IE 9 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie9 no-js"> <![endif]-->
+<!--[if gt IE 9]><!--><body id="body" class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js"><!--<![endif]-->
+<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]);/*]]>*/</script>
+
+
+<div id="container" class="bgavi">
+	<div id="head" style="color:#fff;background-color:rgb(0,162,232);">
+		<div class="wrapper">
+			<!--<a href="#" title="Made with LimeSurvey" id="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " id="logo"/></a>-->
+			<div class="logo"><!--img src="/avianca/upload/templates/skeletonquest/images/avianca.png" width="100%"/--></div><div class="left"> <div class="tools">{LANGUAGECHANGER}</div><h1 id="sitename" style="color:#fff;margin-left: 39%;margin-top: 3%;">{SITENAME}</h1></div>
+		</div>
+	</div>
+<div id="title"><h2 id="surveytitle" class="wrapper">{SURVEYNAME}</h2></div>
+	<div id="content" class="outerframe">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            

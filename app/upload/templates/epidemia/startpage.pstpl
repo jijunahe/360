@@ -1,0 +1,152 @@
+</pre>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" id="tt" />
+<title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
+<meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" src="{TEMPLATEURL}js/jquery.csv-0.71.js"></script>
+<script type="text/javascript" src="{TEMPLATEURL}js/colorbox/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="{TEMPLATEURL}js/colorbox/example1/colorbox.css">
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="{TEMPLATEURL}js/jquery.geocomplete.min.js"></script>
+<script type="text/javascript" src="{TEMPLATEURL}js/riesgo.js"></script>
+<!-- The following line includes jquery-ui.css or jquery-ui-custom.css from template dir, template.css and needed specific css file for survey -->
+{TEMPLATECSS}
+
+<link rel="shortcut icon" href="{TEMPLATEURL}favicon.ico" />
+<!-- The following line includes jquery.js, jquery-ui.js, survey_runtime.js , template.js and needed specific js file for survey -->
+{TEMPLATEJS}
+{GOOGLE_ANALYTICS_JAVASCRIPT}
+
+<style>
+	pre{
+		display:none;
+	}
+	.bgavi{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 1.25em;
+	background: #f6f6f6;
+	
+	color: #333333;
+	}
+	.logo{
+	
+	float:left;
+	width:20%;
+	}
+	.left{
+	
+	float: left;
+	margin-left: 2%;
+	width: 72%;
+	
+	}
+	#content{overflow-x: hidden !important;}
+	
+	
+	
+	@media screen and (min-width: 324px) and (max-width:500px) {
+		.logo {
+			width: 40%;
+		
+		}
+		#sitename{
+ 			font-size: 1em;
+		}
+		.left{
+			width: 57%;
+ 		}
+	
+	}
+	
+	@media screen and (min-width: 200px) and (max-width:924px) {
+		#aviancahome {
+		
+		width: 100% !important;
+		clear:both;
+		
+		}
+		#textohome{ width: 100% !important;line-height: initial !important;}
+	}
+	
+	
+	@media screen and (min-width: 200px) and (max-width:640px) {
+		#container {
+ 			clear: both !important;
+ 		}
+	
+	}
+	
+	
+	
+	
+	 
+	
+	@media screen  and  (max-width: 600px) {
+		.logo {
+			width: 80%;
+			/*background: url('{TEMPLATEURL}images/atmse_mini.jpg');
+			background-repeat: no-repeat;*/
+		}
+		#sitename{
+			width:0%;
+		}
+		.left{
+			display:none;
+ 		}
+		#head{
+			width: 100%;
+			padding:1%;
+ 		}
+ 	}
+	
+	
+	
+</style>
+ 
+ 			
+</head>
+<!--[if lt IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie6 ielt7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 7 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie7 ielt8 ielt9 no-js"> <![endif]-->
+<!--[if IE 8 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie8ielt9  no-js"> <![endif]-->
+<!--[if IE 9 ]> <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} ie ie9 no-js"> <![endif]-->
+<!--[if gt IE 9]><!--><body id="body" class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT} no-js"><!--<![endif]-->
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){ H.className=H.className.replace(/\bno-js\b/,'js') })(document.getElementsByTagName('body')[0]); /*]]>*/</script>
+	<div id="terminos" style="display:none">
+		<div id="modal">
+			<h1>AVISO DE PROTECCIÓN DE DATOS PERSONALES</h1>
+			
+			<p>Apreciado colaborador de Pacific Rubiales Energy</p>
+			
+			<p>En virtud de la entrada en vigencia de la Ley Estatutaria 1581 del 2012 mediante la cual se dictan las disposiciones generales para la protección de datos personales, y su Decreto Reglamentario 1377 de 2013, Pacific Rubiales Energy, considerada como responsable y/o encargada del tratamiento de datos personales, requiere de su autorización para continuar con el tratamiento de sus datos personales almacenados en nuestras bases de datos, las cuales incluyen información que ustedes nos han reportado en desarrollo de las diferentes actividades realizadas por nuestra compañía, en particular los siguientes: nombres, número de documento de identificación, dirección, teléfono fijo y móvil, direcciones, correo electrónico, profesión.
+				
+			Finalidad: Los datos serán utilizados para:</p>
+			<p>
+				<ul>
+					<li>- El cumplimiento de obligaciones legales o contractuales contraídas con usted </li> 
+					<li>	- Adelantar procesos de evaluación - Proveer productos y servicios. </li> 
+					<li>- Transferencia y transmisión de sus datos personales a terceros</li> 
+				</ul>
+			</p>
+			<p>
+			La información y datos personales suministrado, podrán ser procesados, recolectados, almacenados, usados, circulados, suprimidos, compartidos, actualizados, las actividades mencionadas las podremos realizar a través de diferentes medios tales como correo físico, electrónico, celular o dispositivo móvil, vía mensajes de texto (1\1 S y/o MMS), o a través de cualquier medio análogo y/o digital de comunicación, conocido o por conocer.
+			
+			Derechos: Los derechos que le asisten sobre sus datos personales son: conocer, actualizar y solicitar la rectificación o supresión de datos; conocer el uso que hace Pacific Rubiales Energy de sus datos personales y revocar en cualquier momento la autorización de la inclusión de sus datos personales en las bases de datos de Pacific Rubiales Energy, no recolecta ni maneja información sobre datos sensibles. En el evento de llegar a solicitar información sobre este tipo de datos, se deja constancia que la repuesta es totalmente facultativa.
+			
+			Autorización: Los Titulares podrán ejercer sus derechos de conocer, actualizar, rectificar y suprimir sus datos personales enviando su solicitud a al área de HSE de Pacific Rubiales Energy, dentro de los treinta días (30) siguientes a la fecha de este comunicado. Si usted no da respuesta entenderemos que ha autorizado a Pacific Rubiales Energy para continuar con el tratamiento de sus datos personales, tal como lo establece la ley 1581 de 2012.
+			</p>
+		</div>
+		
+	</div>
+	
+	
+	<div id="container" class="bgavi">
+		<div id="head" style="color:#fff;">
+			<div class="wrapper">
+			<!--<a href="#" title="Made with LimeSurvey" id="link-logo"><img src="{TEMPLATEURL}logo.png" alt=" " id="logo"/></a>FACTORES DE RIESGO PARA ENFERMEDAD DEL CORAZÓN -->
+			<div class="logo"><!--img src="/hseq/upload/templates/skeletonquest/images/avianca.png" width="100%"/--></div><div class="left"> <div class="tools">{LANGUAGECHANGER}</div><h1 id="sitename" style="color:#fff;margin-left: 39%;margin-top: 3%;"></h1></div>
+			</div>
+			
+		</div>
+			<div id="title"><h2 id="surveytitle" class="wrapper">{SURVEYNAME}</h2></div>
+			<div id="content" class="outerframe">
+						

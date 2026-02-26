@@ -1,0 +1,16 @@
+                                                                                                                                                                                                                                                                                                                                                                                                {CHECKJAVASCRIPT}
+<div id="welcome" style="background-color:#fff" >
+    <div style="width:70%; float:left" id="aviancahome"> <img src="/clima/upload/templates/skeletonquest/images/med.png" width="100%"/></div>
+    <div style="width:28%; float:left;line-height:28px;padding: 9px;margin-top: 29px" id="textohome">
+        
+        <!--p id='surveydescription' class="text" style="font-family:tahoma,geneva,sans-serif;">{SURVEYDESCRIPTION}</p>
+    	<p id='surveywelcome' class="text">{WELCOME}</p-->
+       
+  <p>Este cuestionario nos permite conocer su percepción acerca de los diferentes aspectos que conforman el Clima Laboral de la empresa y en consecuencia mejorar de manera continua nuestros procesos. Es completamente anónimo. Todas las respuestas son confidenciales e individuales. La sinceridad en sus respuestas es lo más importante.</p>
+   
+   </div>
+        <p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p>   
+        <div style="clear:both"></div>
+
+</div>
+                                                                                                                                                                                                                                                                                                

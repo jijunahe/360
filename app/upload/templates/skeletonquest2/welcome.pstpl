@@ -1,0 +1,31 @@
+{CHECKJAVASCRIPT}
+<div id="welcome" style="background-color:#fff" >
+    <div style="width:70%; float:left" id="aviancahome"> <img src="/clima/upload/templates/skeletonquest2/images/shutterstock_125105273_opt.jpg" width="100%"/></div>
+    <div style="width:28%; float:left;line-height:20px;padding: 9px;margin-top: 29px" id="textohome">
+        
+        <!--p id='surveydescription' class="text" style="font-family:tahoma,geneva,sans-serif;">{SURVEYDESCRIPTION}</p>
+		<p id='surveywelcome' class="text">{WELCOME}</p-->
+		
+		<p><b>BIENVENIDO</b> <br>Después de contestar estas preguntas, sabrás si el cuidado es una prioridad en tu vida.</p>
+	</div>
+	<div style="width:99%; float:left;line-height:20px;padding: 9px;" >
+		<p>Al finalizar la encuesta recibirás en tu correo electrónico el resultado de tu encuesta y una invitación para convertirte en Voluntario de Corazones Responsables.
+</p>
+<p style="font-weight: bold;"> Para diligenciar esta encuesta utiliza Google Chrome, Mozilla Firefox o Microsoft Edge.
+Ten en cuenta que Microsoft Internet Explorer y el navegador Safari de dispositivos Iphone, Ipad o Mac no son compatibles. </p>
+
+<p>Gracias por tu apoyo somos más Corazones Responsables.</p>
+	
+	</div>
+	
+<!--p id="therearexquestions" class="text">{THEREAREXQUESTIONS}</p-->   
+	<div style="clear:both"></div>
+	
+</div>
+<input type="checkbox" id="accepta" style="width:35px;height:35px;float:left">
+<button type="button" id="terminosb"  rel="terminos" value="movenext" name="terminosb" accesskey="n" class="submit button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary" style="float:left" role="button" aria-disabled="false">
+	<span class="ui-button-text" style="float: left;">Acepto los Terminos y condiciones</span>
+	<span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-e" style="float: left; bottom: -6px;"></span>
+</button>
+  
+ 
