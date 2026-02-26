@@ -26,10 +26,12 @@ RUN sed -ri -e 's|DocumentRoot\s+/var/www|DocumentRoot /var/www/html/app|' /etc/
 # Permitir .htaccess
 RUN sed -i '/<Directory \/var\/www\/html\/app\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default
 
-# Directorios escribibles (DERROTERO: tmp y upload)
-RUN mkdir -p /var/www/html/app/tmp/runtime /var/www/html/app/tmp/assets /var/www/html/app/upload \
-    && chown -R www-data:www-data /var/www/html
+# Directorios escribibles (DERROTERO: tmp y upload) — permisos 777 se aplican al arranque vía entrypoint
+RUN mkdir -p /var/www/html/app/tmp/runtime /var/www/html/app/tmp/assets /var/www/html/app/upload
+
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 80
 
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+ENTRYPOINT ["/entrypoint.sh"]

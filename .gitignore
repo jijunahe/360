@@ -5,7 +5,7 @@
 
 # Node artifact files
 node_modules/
-dist/
+#dist/
 
 # Compiled Java class files
 *.class
@@ -49,14 +49,14 @@ Thumbs.db
 *.wmv
 
 # Dump SQL (muy grande, no subir a GitHub)
-360.2020.10.24.sql
+#360.2020.10.24.sql
 
 # Archivos empaquetados (muy grandes, redundantes con app/ y BD)
 *.tgz
 
 # App runtime / subidas (DERROTERO: tmp y upload)
-app/tmp/
-app/upload/
+#app/tmp/
+#app/upload/
 
 # Entorno y secretos
 .env
